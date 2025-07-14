@@ -82,6 +82,10 @@ Create a .env file based on the provided .envtemplate and adjust the settings as
 ```bash
 cp .envtemplate .env
 ```
+```bash
+copy .envtemplate .env
+```
+for windows
 
 update the file with your hosts and Secret_key
 ```bash
