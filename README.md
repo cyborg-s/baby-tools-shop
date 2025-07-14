@@ -34,8 +34,6 @@ This project implements a functional e-commerce application based on Django for 
 
 
 ## Prerequisites
-- Python 3.9
-- Django 4.0.2
 - Docker
   
 ## Quickstart
@@ -58,6 +56,8 @@ For macOS/Linux
 3. Create and start the Docker container 
 ```bash
 docker build -t baby-tools-shop .
+```
+```bash
 docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ```
 
@@ -82,6 +82,7 @@ Create a .env file based on the provided .envtemplate and adjust the settings as
 ```bash
 cp .envtemplate .env
 ```
+
 update the file with your hosts and Secret_key
 ```bash
 nano .env
@@ -92,6 +93,7 @@ Start the container
 ```bash
 docker build -t baby-tools-shop .
 ```
+
 ```bash
 docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ```
