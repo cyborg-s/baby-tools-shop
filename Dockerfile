@@ -1,5 +1,5 @@
 #Select base image
-FROM python:3.12
+FROM python:3.9
 
 #Create working directory in the container
 WORKDIR /app
