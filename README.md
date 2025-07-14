@@ -14,7 +14,8 @@ This project implements a functional e-commerce application based on Django for 
     - [2. Navigate to the project directory](#2-navigate-to-the-project-directory)
     - [3. Create .env file](#3-create-env-file)
     - [4. Build the Docker Image and start the Service](#4-build-the-docker-image-and-start-the-service)
-    - [5. Verify the Deployment](#5-verify-the-deployment)
+    - [5. Create a Superuser](#5-create-a-superuser)
+    - [6. Verify the Deployment](#6-verify-the-deployment)
   - [Project Structure](#project-structure)
   - [Configuration](#configuration)
       - [Key configuration files:](#key-configuration-files)
@@ -33,7 +34,8 @@ This project implements a functional e-commerce application based on Django for 
 
 
 ## Prerequisites
-- Python 3.12
+- Python 3.9
+- Django 4.0.2
 - Docker
   
 ## Quickstart
@@ -52,15 +54,11 @@ cp .envtemplate . env
 ```
 For macOS/Linux
 
-```bash
-copy .envtemplate .env 
-```
-For Windows
 
 3. Create and start the Docker container 
 ```bash
 docker build -t baby-tools-shop .
-docker run -d -p 8025:8025 --name baby-tools-container baby-tools-shop
+docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ```
 
 4. Call the application: Open your browser and visit: Visit http://<YOUR_IP_ADDRESSE>:8025 in your browser.
@@ -84,7 +82,7 @@ Create a .env file based on the provided .envtemplate and adjust the settings as
 ```bash
 cp .envtemplate .env
 ```
-update the file
+update the file with your hosts and Secret_key
 ```bash
 nano .env
 ```
@@ -92,12 +90,24 @@ nano .env
 ### 4. Build the Docker Image and start the Service
 Start the container
 ```bash
-docker compose up --build -d
+docker build -t baby-tools-shop .
+```
+```bash
+docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ```
 - The -d flag runs the container in the background.
+- The -p 8025:8025 maps the container port to the host machine.
+- The --name baby-tools-shop-container assigns a name to the running container.
 
 
-### 5. Verify the Deployment
+### 5. Create a Superuser
+If you want to access the Django admin panel, create a superuser:
+```bash
+python manage.py createsuperuser
+```
+Follow the prompts to set up a username, email, and password.
+
+### 6. Verify the Deployment
 Check the application in your Browser
 ```bash
 http://<YOUR_IP_ADRESS>:8025
@@ -105,7 +115,7 @@ http://<YOUR_IP_ADRESS>:8025
 
 If nedded, view container logs
 ```bash
-docker compose logs
+docker logs baby-tools-container
 ```
 
 
@@ -127,7 +137,6 @@ baby-tools-shop/
 #### Key configuration files:
 - `requirements.txt`: Python dependencies
 - `Dockerfile`: Docker configuration
-- `docker-compose.yml`: Definition and management of all services for container operation
 - `babyshop_app/babyshop/settings.py`: Main Django settings
 
 
