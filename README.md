@@ -105,7 +105,7 @@ docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ### 5. Create a Superuser
 If you want to access the Django admin panel, create a superuser:
 ```bash
-python manage.py createsuperuser
+docker exec -it baby-tools-shop-container python manage.py createsuperuser
 ```
 Follow the prompts to set up a username, email, and password.
 
