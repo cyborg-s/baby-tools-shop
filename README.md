@@ -48,7 +48,7 @@ cd baby-tools-shop
 
 2. Create the .env file based on the provided .envtemplate and customize the settings as needed.
 ```bash
-cp .envtemplate . env
+cp .envtemplate .env
 ```
 For macOS/Linux
 
@@ -61,7 +61,7 @@ docker build -t baby-tools-shop .
 docker run -d -p 8025:8025 --name baby-tools-shop-container baby-tools-shop
 ```
 
-4. Call the application: Open your browser and visit: Visit http://<YOUR_IP_ADDRESSE>:8025 in your browser.
+4. Call the application: Open your browser and visit: Visit http://<YOUR_IP_ADDRESS>:8025 in your browser.
 
 
 ## Usage Section
