@@ -1,0 +1,8 @@
+#Localhost for testing
+ALLOWED_HOSTS="http://localhost:4200,127.0.0.1,localhost"
+
+#Django Debug Mode
+DEBUG=True
+
+#Django Secret Key
+SECRET_KEY="<YOUR_SECRET_KEY>"

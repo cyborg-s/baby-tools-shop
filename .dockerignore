@@ -1,0 +1,58 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Git
+.git/
+.gitignore
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs & Debug
+*.log
+logs/
+*.tmp
+
+# Environment files
+.env.*       # z.B. .env.dev, .env.prod
+!envtemplate
+
+# Test / Coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Build / Distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Local DBs / sensitive data
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.bak
+
+# Docker volumes / runtime data
+volumes/
+tmp/
+data/
+run/
+var/
